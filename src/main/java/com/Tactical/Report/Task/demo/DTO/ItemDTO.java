@@ -7,6 +7,7 @@ import lombok.Data;
 public class ItemDTO {
     private String id;
 
+
     @NotBlank(message = "Name is required and cannot be empty")
     private String name;
 
