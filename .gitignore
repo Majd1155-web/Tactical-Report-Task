@@ -1,21 +1,30 @@
 ### Gradle ###
-.gradle
+.gradle/
+**/build/
+!src/**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+### Build output ###
 build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+out/
+bin/
+target/
 
 ### IntelliJ IDEA ###
 .idea/
 *.iws
 *.iml
 *.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
 ### VS Code ###
 .vscode/
+
+### Eclipse ###
+.classpath
+.project
+.settings/
 
 ### macOS ###
 .DS_Store
@@ -23,6 +32,7 @@ out/
 ### Windows ###
 Thumbs.db
 ehthumbs.db
+Desktop.ini
 
 ### Application ###
 application-local.properties
@@ -30,6 +40,7 @@ application-local.yml
 
 ### Logs ###
 *.log
+logs/
 
 ### MongoDB ###
 data/
