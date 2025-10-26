@@ -1,3 +1,7 @@
+### Docker ###
+docker-compose.override.yml
+.docker/
+
 ### Backend (Spring Boot) ###
 backend/.gradle/
 backend/build/

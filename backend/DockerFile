@@ -1,0 +1,36 @@
+# Stage 1: Build the application
+FROM gradle:8.5-jdk21 AS build
+
+# Set working directory
+WORKDIR /app
+
+# Copy gradle files
+COPY build.gradle settings.gradle gradlew ./
+COPY gradle ./gradle
+
+# Download dependencies (cached layer)
+RUN gradle dependencies --no-daemon || return 0
+
+# Copy source code
+COPY src ./src
+
+# Build the application
+RUN gradle clean build -x test --no-daemon
+
+# Stage 2: Create the runtime image
+FROM openjdk:21-jdk-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy the built JAR from build stage
+COPY --from=build /app/build/libs/*.jar app.jar
+
+# Expose port
+EXPOSE 8080
+
+# Set environment variables
+ENV SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/itemsdb
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
