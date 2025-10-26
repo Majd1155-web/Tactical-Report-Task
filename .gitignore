@@ -1,46 +1,54 @@
-### Gradle ###
-.gradle/
-**/build/
-!src/**/build/
-gradle-app.setting
-!gradle-wrapper.jar
-.gradletasknamecache
+### Backend (Spring Boot) ###
+backend/.gradle/
+backend/build/
+backend/out/
+backend/.idea/
+backend/*.iml
+backend/*.iws
+backend/*.ipr
 
-### Build output ###
-build/
-out/
-bin/
-target/
+### Frontend (Next.js) ###
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+frontend/.vercel
 
-### IntelliJ IDEA ###
+### IDEs ###
 .idea/
-*.iws
-*.iml
-*.ipr
-
-### VS Code ###
 .vscode/
+*.iml
 
-### Eclipse ###
-.classpath
-.project
-.settings/
-
-### macOS ###
+### OS ###
 .DS_Store
-
-### Windows ###
 Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-### Application ###
-application-local.properties
-application-local.yml
 
 ### Logs ###
 *.log
-logs/
+```
 
-### MongoDB ###
-data/
+---
+
+## **Step 3: Commit the Reorganization**
+
+In GitHub Desktop:
+
+1. You'll see all the file moves
+2. **Summary:** `Reorganize project - move backend to separate folder`
+3. **Description:** `Prepare project structure for frontend addition`
+4. Click **"Commit to main"**
+5. Click **"Push origin"**
+
+---
+
+## **Step 4: Open VS Code and Navigate to Project Root**
+
+1. **Open VS Code**
+2. **File → Open Folder**
+3. Select your **project root folder** (the one containing `backend/` folder)
+4. You should see:
+```
+   EXPLORER
+   ├── backend/
+   ├── README.md
+   └── .gitignore
