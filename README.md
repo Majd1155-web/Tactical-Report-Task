@@ -17,6 +17,7 @@ Full-stack web application for managing items with CRUD operations. Built with S
 ```
 
 2. **Start all services**
+   Open cmd or git bash in project root (the folder that contains the backend and frontend folders for the project)
 
 ```bash
    docker-compose up --build
@@ -129,4 +130,4 @@ docker-compose up --build
 
 ## Author
 
-[Your Name]
+Majd Daou
