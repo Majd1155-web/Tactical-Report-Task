@@ -23,6 +23,7 @@ export default function AddItemPage() {
     }
   }, [router]);
 
+  // handles Form Submission to create a new item via the backend API
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError('');

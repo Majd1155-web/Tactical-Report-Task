@@ -32,6 +32,7 @@ export default function ItemDetailsPage() {
     fetchItem();
   }, [router, id]);
 
+//   Fetches Item Details by ID and displays it to allow for View, Edit, and Delete actions
   const fetchItem = async () => {
     try {
       setIsLoading(true);
@@ -48,10 +49,12 @@ export default function ItemDetailsPage() {
     }
   };
 
+  // Handles Edit Mode
   const handleEdit = () => {
     setIsEditing(true);
   };
 
+  // Handles Cancel Edit to revert changes
   const handleCancelEdit = () => {
     setIsEditing(false);
     if (item) {
@@ -60,6 +63,7 @@ export default function ItemDetailsPage() {
     }
   };
 
+    // Handles Save Changes after editing item details ensuring validation requirements are met
   const handleSave = async () => {
     if (!editName.trim() || editName.length < 2) {
       setError('Name must be at least 2 characters');
@@ -82,6 +86,7 @@ export default function ItemDetailsPage() {
     }
   };
 
+  // Handles Delete Item action with confirmation modal
   const handleDelete = async () => {
     try {
       setIsDeleting(true);
@@ -94,6 +99,7 @@ export default function ItemDetailsPage() {
     }
   };
 
+  // Handles Logout action
   const handleLogout = () => {
     auth.logout();
     router.push('/login');

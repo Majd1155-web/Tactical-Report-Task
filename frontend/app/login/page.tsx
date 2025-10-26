@@ -13,6 +13,7 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
+//   Handles Login Form Submission by using hardcoded credentials in auth.ts
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError('');

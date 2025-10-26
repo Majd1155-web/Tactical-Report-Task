@@ -26,6 +26,7 @@ export default function ItemsPage() {
     fetchItems();
   }, [router]);
 
+  // Fetches Items from the backend API and handles loading, error, and empty states
   const fetchItems = async () => {
     try {
       setIsLoading(true);
@@ -40,6 +41,7 @@ export default function ItemsPage() {
     }
   };
 
+  // Handles Logout action
   const handleLogout = () => {
     auth.logout();
     router.push('/login');
