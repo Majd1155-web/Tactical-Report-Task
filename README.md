@@ -59,14 +59,6 @@ That's it! Everything runs in Docker containers.
 | PUT    | `/api/items/{id}` | Update an item    |
 | DELETE | `/api/items/{id}` | Delete an item    |
 
-### Example API Request
-
-```bash
-curl -X POST http://localhost:8080/api/items \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Laptop","description":"Dell XPS 15"}'
-```
-
 ## Testing
 
 1. Open http://localhost:3000

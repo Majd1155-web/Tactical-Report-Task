@@ -20,17 +20,6 @@ docker run -d -p 27017:27017 mongo:latest
 
 API runs on http://localhost:8080
 
-## Test API
-```bash
-# Create item
-curl -X POST http://localhost:8080/api/items \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Test Item","description":"Test Description"}'
-
-# Get all items
-curl http://localhost:8080/api/items
-```
-
 ## Build
 ```bash
 ./gradlew build
