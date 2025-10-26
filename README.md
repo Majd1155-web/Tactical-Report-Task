@@ -1,221 +1,132 @@
 # Item Management Application
 
-Full-stack web application for managing items with CRUD operations.
-
-## Tech Stack
-
-### Backend
-
-- Spring Boot 3.x
-- MongoDB
-- Gradle
-- MapStruct
-- Lombok
-
-### Frontend
-
-- Next.js (Coming soon)
-- TypeScript
-- Tailwind CSS
-
-## Features
-
-- Create, Read, Update, Delete items
-- Input validation
-- Centralized error handling
-- RESTful API design
-- Docker containerization
-
-## Getting Started
+Full-stack web application for managing items with CRUD operations. Built with Spring Boot, Next.js, and MongoDB.
 
 ### Prerequisites
 
-- Java 21
-- Docker Desktop
-- Node.js 18+
+- Docker Desktop installed and running
+- Git
 
-### Running the Backend
+### Run the Application
 
-1. Start MongoDB:
-
-```bash
-docker run -d --name mongodb -p 27017:27017 mongo:latest
-```
-
-2. Run the application:
+1. **Clone the repository**
 
 ```bash
-./gradlew bootRun
+   git clone <repository-url>
+   cd <repository-name>
 ```
 
-The API will be available at `http://localhost:8080`
+2. **Start all services**
 
-### API Endpoints
+```bash
+   docker-compose up --build
+```
 
-- `POST /api/items` - Create a new item
-- `GET /api/items` - Get all items
-- `GET /api/items/{id}` - Get item by ID
-- `PUT /api/items/{id}` - Update an item
-- `DELETE /api/items/{id}` - Delete an item
+3. **Access the application**
 
-## Docker
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:8080
 
-Coming soon...
+4. **Login credentials**
+
+   - Username: `admin`
+   - Password: `password`
+
+5. **Stop the application**
+
+```bash
+   docker-compose down
+```
+
+That's it! Everything runs in Docker containers.
 
 ## Project Structure
 
 ```
-├── src/
-│   └── main/
-│       └── java/
-│           └── com/Tactical/Report/Task/demo/
-│               ├── controller/
-│               ├── service/
-│               ├── repository/
-│               ├── model/
-│               ├── DTO/
-│               ├── Mapper/
-│               ├── exception/
-│               └── helperClasses/
-├── build.gradle
-└── README.md
+├── backend/              # Spring Boot REST API
+├── frontend/             # Next.js web application
+└── docker-compose.yml    # Docker orchestration
+```
+
+## API Endpoints
+
+| Method | Endpoint          | Description       |
+| ------ | ----------------- | ----------------- |
+| POST   | `/api/items`      | Create a new item |
+| GET    | `/api/items`      | Get all items     |
+| GET    | `/api/items/{id}` | Get item by ID    |
+| PUT    | `/api/items/{id}` | Update an item    |
+| DELETE | `/api/items/{id}` | Delete an item    |
+
+### Example API Request
+
+```bash
+curl -X POST http://localhost:8080/api/items \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Laptop","description":"Dell XPS 15"}'
+```
+
+## Testing
+
+1. Open http://localhost:3000
+2. Login with `admin` / `password`
+3. Create, view, edit, and delete items through the UI
+4. Or test the API directly using curl/Postman
+
+## Features
+
+- User authentication with session management
+- Create, read, update, delete operations
+- Input validation (frontend and backend)
+- Responsive design (mobile, tablet, desktop)
+- Error handling with user-friendly messages
+- Dockerized for easy deployment
+
+## Running Without Docker
+
+If you prefer to run services individually:
+
+### Backend
+
+```bash
+# Start MongoDB
+docker run -d -p 27017:27017 mongo:latest
+
+# Run backend
+cd backend
+./gradlew bootRun
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## Troubleshooting
+
+**View logs:**
+
+```bash
+docker-compose logs backend
+docker-compose logs frontend
+```
+
+**Rebuild after changes:**
+
+```bash
+docker-compose up --build
+```
+
+**Clean restart:**
+
+```bash
+docker-compose down -v
+docker-compose up --build
 ```
 
 ## Author
 
-Majd Daou
-
-```
-
----
-
-## **Step 3: Open GitHub Desktop**
-
-1. **Open GitHub Desktop** application
-2. **Click "File" → "Add Local Repository"**
-3. **Click "Choose..."** and navigate to your project folder
-4. You'll get a message: **"This directory does not appear to be a Git repository"**
-5. **Click "create a repository"**
-
-### **Initialize Repository Settings:**
-
-- **Name:** (auto-filled from folder name)
-- **Description:** `Full-stack item management application`
-- **Git Ignore:** Select **"Java"** from dropdown (or keep your custom .gitignore)
-- **License:** None (or choose MIT if you want)
-- **Initialize this repository with a README:** ❌ **Uncheck** (we already have one)
-
-6. **Click "Create Repository"**
-
----
-
-## **Step 4: Make Your First Commit**
-
-You should now see all your files listed in GitHub Desktop.
-
-1. **Review the changes** - you'll see all your project files
-2. In the **Summary field** (bottom left), type:
-```
-
-Initial commit - Spring Boot backend
-
-```
-3. In the **Description field** (optional), type:
-```
-
-- Complete REST API with CRUD operations
-- MongoDB integration
-- Input validation and error handling
-- MapStruct for DTO mapping
-
-```
-4. **Click "Commit to main"**
-
----
-
-## **Step 5: Publish to GitHub**
-
-1. **Click "Publish repository"** button (top right)
-2. A dialog appears:
-   - **Name:** (auto-filled)
-   - **Description:** (auto-filled)
-   - **Keep this code private:** ✅ Check if you want private, or uncheck for public
-3. **Click "Publish repository"**
-
-GitHub Desktop will upload your code to GitHub!
-
----
-
-## **Step 6: Verify on GitHub**
-
-1. **Click "View on GitHub"** button in GitHub Desktop
-2. Your browser opens showing your repository
-3. You should see:
-   - All your source code
-   - README.md displayed
-   - Commit history
-
----
-
-## **Step 7: Future Commits (After Making Changes)**
-
-Whenever you make changes:
-
-1. **Open GitHub Desktop**
-2. **Review changed files** (left panel shows what changed)
-3. **Write commit message:**
-   - Summary: `Add frontend authentication`
-   - Description: Details about what you changed
-4. **Click "Commit to main"**
-5. **Click "Push origin"** (top right) to upload to GitHub
-
----
-
-## **Typical Commit Messages for Your Project:**
-
-As you continue, use clear commit messages:
-```
-
-✅ Initial commit - Spring Boot backend
-✅ Add exception handling and validation
-✅ Add Next.js frontend with authentication
-✅ Implement items list and create pages
-✅ Add item details and update functionality
-✅ Add delete item functionality
-✅ Create Dockerfiles for backend and frontend
-✅ Add docker-compose.yml
-✅ Update README with complete documentation
-✅ Final testing and bug fixes
-
-```
-
----
-
-## **Project Structure on GitHub:**
-
-After pushing, your repo should look like:
-```
-
-spring-boot-nextjs-item-management/
-├── .gitignore
-├── README.md
-├── build.gradle
-├── settings.gradle
-├── gradlew
-├── gradlew.bat
-├── gradle/
-└── src/
-└── main/
-├── java/
-│ └── com/Tactical/Report/Task/demo/
-└── resources/
-└── application.properties
-
-```
-
-Later you'll add:
-```
-
-├── frontend/ (Next.js app)
-├── Dockerfile (Backend Docker)
-└── docker-compose.yml
+[Your Name]
