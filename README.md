@@ -5,6 +5,7 @@ Full-stack web application for managing items with CRUD operations.
 ## Tech Stack
 
 ### Backend
+
 - Spring Boot 3.x
 - MongoDB
 - Gradle
@@ -12,6 +13,7 @@ Full-stack web application for managing items with CRUD operations.
 - Lombok
 
 ### Frontend
+
 - Next.js (Coming soon)
 - TypeScript
 - Tailwind CSS
@@ -27,6 +29,7 @@ Full-stack web application for managing items with CRUD operations.
 ## Getting Started
 
 ### Prerequisites
+
 - Java 21
 - Docker Desktop
 - Node.js 18+
@@ -34,11 +37,13 @@ Full-stack web application for managing items with CRUD operations.
 ### Running the Backend
 
 1. Start MongoDB:
+
 ```bash
 docker run -d --name mongodb -p 27017:27017 mongo:latest
 ```
 
 2. Run the application:
+
 ```bash
 ./gradlew bootRun
 ```
@@ -58,6 +63,7 @@ The API will be available at `http://localhost:8080`
 Coming soon...
 
 ## Project Structure
+
 ```
 ├── src/
 │   └── main/
@@ -77,7 +83,8 @@ Coming soon...
 
 ## Author
 
-[Your Name]
+Majd Daou
+
 ```
 
 ---
@@ -109,14 +116,18 @@ You should now see all your files listed in GitHub Desktop.
 1. **Review the changes** - you'll see all your project files
 2. In the **Summary field** (bottom left), type:
 ```
+
 Initial commit - Spring Boot backend
+
 ```
 3. In the **Description field** (optional), type:
 ```
+
 - Complete REST API with CRUD operations
 - MongoDB integration
 - Input validation and error handling
 - MapStruct for DTO mapping
+
 ```
 4. **Click "Commit to main"**
 
@@ -164,6 +175,7 @@ Whenever you make changes:
 
 As you continue, use clear commit messages:
 ```
+
 ✅ Initial commit - Spring Boot backend
 ✅ Add exception handling and validation
 ✅ Add Next.js frontend with authentication
@@ -174,6 +186,7 @@ As you continue, use clear commit messages:
 ✅ Add docker-compose.yml
 ✅ Update README with complete documentation
 ✅ Final testing and bug fixes
+
 ```
 
 ---
@@ -182,6 +195,7 @@ As you continue, use clear commit messages:
 
 After pushing, your repo should look like:
 ```
+
 spring-boot-nextjs-item-management/
 ├── .gitignore
 ├── README.md
@@ -193,13 +207,15 @@ spring-boot-nextjs-item-management/
 └── src/
 └── main/
 ├── java/
-│   └── com/Tactical/Report/Task/demo/
+│ └── com/Tactical/Report/Task/demo/
 └── resources/
 └── application.properties
+
 ```
 
 Later you'll add:
 ```
-├── frontend/          (Next.js app)
-├── Dockerfile         (Backend Docker)
+
+├── frontend/ (Next.js app)
+├── Dockerfile (Backend Docker)
 └── docker-compose.yml
